@@ -1,0 +1,34 @@
+﻿@using Syncfusion.EJ2
+@{
+    ViewData["Title"] = "Home Page";
+}
+<ejs-schedule id="Schedule" height="650" selectedDate="new DateTime(2018, 4, 5)" dataBound="onBound">
+    <e-schedule-views>
+        <e-schedule-view option="Day"></e-schedule-view>
+        <e-schedule-view option="Week"></e-schedule-view>
+        <e-schedule-view option="Month"></e-schedule-view>
+    </e-schedule-views>
+    <e-schedule-eventsettings dataSource="@ViewBag.datasource" enableTooltip="true">
+    </e-schedule-eventsettings>
+</ejs-schedule>
+
+<script type="text/javascript">
+    function onBound() { 
+        var tooltipObj = document.querySelector('.e-schedule').ej2_instances[2]
+        tooltipObj.target = ".e-subject";
+        tooltipObj.beforeRender = function (args) {
+            if (args.target.parentElement.classList.contains('e-appointment-details')) {
+                var schObj = document.querySelector('.e-schedule').ej2_instances[0];
+                var tooltipObj = document.querySelector('.e-schedule').ej2_instances[2];
+                var Internationalization = new ej.base.Internationalization();
+                var appData = schObj.getEventDetails(args.target.parentElement.parentElement);
+                var content = "<div><div class='subject'>" + appData.Subject + "</div>" +
+                    "<div class='start_time'>" + Internationalization.formatDate(appData.StartTime, { type: 'dateTime', skeleton: 'short' }) + "</div>" +
+                    "<div class='end_time'>" + Internationalization.formatDate(appData.EndTime, { type: 'dateTime', skeleton: 'short' }) + "</div></div>";
+                tooltipObj.content = content;
+            } else {
+                args.cancel = true;
+            }
+        };
+    } 
+</script>
