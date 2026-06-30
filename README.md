@@ -1,12 +1,6 @@
 # Show Tooltip on hovering the subject of appointment alone in Asp.Net Core scheduler
 
-## Repository Description
-
-This repository contains a comprehensive example demonstrating how to display custom tooltips when hovering over appointment subjects in the Syncfusion ASP.NET Core Scheduler component. The project showcases a practical implementation of tooltip functionality that enhances user experience by providing contextual information about scheduled events.
-
-## Project Overview
-
-This quick start project helps you implement tooltip functionality on appointment subjects in the Syncfusion Scheduler component for ASP.NET Core. The tooltip appears when users hover over the appointment subject, displaying additional information about the event. This feature is useful for showing event details, descriptions, or other relevant information without cluttering the main scheduler view.
+A quick start project that demonstrates how to display custom tooltips when hovering over appointment subjects in the [ASP.NET Core Scheduler](https://www.syncfusion.com/aspnet-core-ui-controls/scheduler) component. This project includes code examples for implementing tooltip functionality that enhances user experience by showing additional event details, descriptions, and contextual information without cluttering the scheduler view.
 
 ## Features
 
@@ -20,8 +14,6 @@ This quick start project helps you implement tooltip functionality on appointmen
 
 * Visual Studio 2022 or later
 * .NET 6.0 or higher
-* Syncfusion ASP.NET Core Scheduler NuGet package
-* Basic knowledge of ASP.NET Core and Razor Pages
 
 ## How to run this application?
 
